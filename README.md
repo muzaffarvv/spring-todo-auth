@@ -14,37 +14,38 @@ A Spring Boot Todo application with user authentication, role management, and pr
   - Toggle user block status
 - Spring Security configuration with login, logout, remember-me
 - Validation for user registration to prevent duplicate usernames
+- Uses Lombok for boilerplate code reduction
 
 ---
 
 ## 🗂 Folder & Class Structure
 
+```plaintext
 src/main/java/uz/pdp/todo
 ├── controller
-│ ├── AuthUserController.java # User authentication & profile
-│ └── TodoController.java # Todo CRUD and UI mapping
+│   ├── AuthUserController.java      # User authentication & profile
+│   └── TodoController.java          # Todo CRUD and UI mapping
 ├── service
-│ ├── AuthUserService.java # User service (CRUD, login, role)
-│ ├── TodoService.java # Todo service (CRUD)
-│ └── TodoApplication.java # Spring Boot application entry point
+│   ├── AuthUserService.java         # User service (CRUD, login, role)
+│   ├── TodoService.java             # Todo service (CRUD)
+│   └── TodoApplication.java         # Spring Boot application entry point
 ├── dao
-│ ├── AuthUserDao.java # DB interaction for users
-│ └── TodoDao.java # DB interaction for todos
+│   ├── AuthUserDao.java             # DB interaction for users
+│   └── TodoDao.java                 # DB interaction for todos
 ├── model
-│ ├── AuthUser.java # User entity/model
-│ └── Todo.java # Todo entity/model
+│   ├── AuthUser.java                # User entity/model
+│   └── Todo.java                    # Todo entity/model
 ├── dto
-│ └── UserRegisterDTO.java # User registration DTO
+│   └── UserRegisterDTO.java         # User registration DTO
 ├── enums
-│ ├── Role.java # User roles
-│ ├── Priority.java # Todo priorities
-│ └── StringToPriorityConverter.java # Converter for request params
-├── security
-│ ├── SecurityConfigurer.java # Spring Security config
-│ ├── CustomUserDetailsService.java # UserDetailsService implementation
-│ └── CustomAuthenticatedFailureHandler.java # Login failure handler
+│   ├── Role.java                    # User roles
+│   ├── Priority.java                # Todo priorities
+│   └── StringToPriorityConverter.java # Converter for request params
+└── security
+    ├── SecurityConfigurer.java           # Spring Security config
+    ├── CustomUserDetailsService.java     # UserDetailsService implementation
+    └── CustomAuthenticatedFailureHandler.java # Login failure handler
 
-Copy code
 src/main/resources/templates
 ├── login.html
 ├── register.html
@@ -55,22 +56,21 @@ src/main/resources/templates
 ├── fragments.html
 └── logout.html
 
-yaml
-Copy code
+⚙️ Technologies Used
 
----
+• Java 17+
 
-## ⚙️ Technologies Used
+• Spring Boot
 
-- Java 17+
-- Spring Boot
-- Spring Security
-- JDBC Template
-- Thymeleaf
-- Lombok
-- PostgreSQL (or any relational DB)
+• Spring Security
 
----
+• JDBC Template
+
+• Thymeleaf
+
+• Lombok
+
+• PostgreSQL (or any relational DB)
 
 ## 🚀 How to Run
 
@@ -79,23 +79,15 @@ Copy code
 ```bash
 git clone https://github.com/yourusername/spring-todo-auth.git
 cd spring-todo-auth
-Configure your database in application.properties
 
-Build and run:
+2. Configure your database in application.properties.
 
-bash
-Copy code
-./mvnw spring-boot:run
-Open in browser: http://localhost:8080/auth/login
+3. Build and run: ./mvnw spring-boot:run
+
+4. Open in browser: http://localhost:8080/auth/login
 
 👤 User Accounts
+
 Register a new user via /auth/register
 
 Admin panel: /auth/admin (manage users, roles, block/unblock)
-
-📝 Notes
-Each todo is associated with a user and has created_at and updated_at timestamps.
-
-Registration prevents duplicate usernames.
-
-Uses Lombok for boilerplate code reduction.
