@@ -1,3 +1,5 @@
+
+````markdown
 # spring-todo-auth
 
 A Spring Boot Todo application with user authentication, role management, and priority-based task management.
@@ -45,8 +47,9 @@ src/main/java/uz/pdp/todo
     ├── SecurityConfigurer.java           # Spring Security config
     ├── CustomUserDetailsService.java     # UserDetailsService implementation
     └── CustomAuthenticatedFailureHandler.java # Login failure handler
+````
 
-
+```plaintext
 src/main/resources/templates
 ├── login.html
 ├── register.html
@@ -56,38 +59,46 @@ src/main/resources/templates
 ├── admin.html
 ├── fragments.html
 └── logout.html
+```
 
-⚙️ Technologies Used
+---
 
-• Java 17+
+## ⚙️ Technologies Used
 
-• Spring Boot
+* Java 17+
+* Spring Boot
+* Spring Security
+* JDBC Template
+* Thymeleaf
+* Lombok
+* PostgreSQL (or any relational DB)
 
-• Spring Security
-
-• JDBC Template
-
-• Thymeleaf
-
-• Lombok
-
-• PostgreSQL (or any relational DB)
+---
 
 ## 🚀 How to Run
 
 1. Clone the repository:
 
+```bash
 git clone https://github.com/yourusername/spring-todo-auth.git
 cd spring-todo-auth
+```
 
-2. Configure your database in application.properties.
+2. Configure your database in `application.properties`.
 
-3. Build and run: ./mvnw spring-boot:run
+3. Build and run:
 
-4. Open in browser: http://localhost:8080/auth/login
+```bash
+./mvnw spring-boot:run
+```
 
-👤 User Accounts
+4. Open in browser: [http://localhost:8080/auth/login](http://localhost:8080/auth/login)
 
-Register a new user via /auth/register
+---
 
-Admin panel: /auth/admin (manage users, roles, block/unblock)
+## 👤 User Accounts
+
+* Register a new user via `/auth/register`
+* Admin panel: `/auth/admin` (manage users, roles, block/unblock)
+
+---
