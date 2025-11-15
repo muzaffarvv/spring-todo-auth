@@ -20,7 +20,6 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    // faqat current userning todolari
     @GetMapping
     public String get(Model model) {
         List<Todo> todos = todoService.getTodosForCurrentUser();
