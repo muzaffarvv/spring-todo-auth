@@ -46,6 +46,7 @@ src/main/java/uz/pdp/todo
     ├── CustomUserDetailsService.java     # UserDetailsService implementation
     └── CustomAuthenticatedFailureHandler.java # Login failure handler
 
+
 src/main/resources/templates
 ├── login.html
 ├── register.html
@@ -76,7 +77,6 @@ src/main/resources/templates
 
 1. Clone the repository:
 
-```bash
 git clone https://github.com/yourusername/spring-todo-auth.git
 cd spring-todo-auth
 
