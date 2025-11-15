@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <title th:text="${title}">todo</title>  <!-- To'g'rilandi: th:text ishlatildi -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+</head>
+
+<body>
+
+<!-- 🔹 Navbar fragment -->
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <a class="navbar-brand fw-bold" th:href="@{/todos}">todo</a>  <!-- To'g'rilandi: th:href ishlatildi -->
+
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <!-- ❌ Agar foydalanuvchi login qilmagan bo'lsa -->
+            <li class="nav-item" sec:authorize="isAnonymous()">
+                <a class="btn btn-outline-primary me-2" th:href="@{/auth/login}">login</a>  <!-- To'g'rilandi -->
+            </li>
+            <li class="nav-item" sec:authorize="isAnonymous()">
+                <a class="btn btn-primary" th:href="@{/auth/register}">register</a>  <!-- To'g'rilandi -->
+            </li>
+
+            <li class="nav-item" sec:authorize="isAuthenticated()">
+                <form th:action="@{/auth/logout}" method="post">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <button type="submit" class="btn btn-danger">logout</button>
+            </form>
+
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 🔹 JS links -->
+<section th:fragment="js_links">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+            integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilCddDz6ZAVfHWe1Y"
+            crossorigin="anonymous"></script>
+</section>
+
+</body>
+</html>

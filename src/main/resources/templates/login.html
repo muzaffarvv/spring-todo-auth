@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="~{fragments :: head('login')}">
+    <title> </title>
+</head>
+
+<body>
+<nav th:replace="~{fragments :: navbar}"></nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center mb-4">login page</h1>
+            <div th:if="${error}" class="alert alert-danger">
+                <span th:text="${error.toLowerCase()}"></span>
+            </div>
+            <form method="post" action="/auth/login">
+                <div th:if="${param.logout}" class="alert alert-success text-center">
+                    You have been logged out successfully!
+                </div>
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">username</label>
+                    <input type="text" class="form-control" id="username" name="uname" required>
+                    <small id="usernameHelp" class="form-text text-muted">kamida 4 ta belgi bo‘lishi kerak</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" name="pswd" required>
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">show</button>
+                    </div>
+                    <small id="passwordHelp" class="form-text text-muted">kamida 6 ta belgi bo‘lishi kerak</small>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="remember" id="remember">
+                    <label class="form-check-label" for="remember">remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">login</button>
+                <a href="/auth/register" class="d-block text-center mt-2">register</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<section th:replace="~{fragments :: js_links}"></section>
+
+<script>
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const usernameHelp = document.getElementById("usernameHelp");
+    const passwordHelp = document.getElementById("passwordHelp");
+    const togglePassword = document.getElementById("togglePassword");
+
+    // Username tekshirish
+    username.addEventListener("input", () => {
+        if (username.value.length < 4) {
+            usernameHelp.textContent = "kamida 4 ta belgi bo‘lishi kerak";
+            usernameHelp.classList.remove("text-success");
+            usernameHelp.classList.add("text-danger");
+        } else {
+            usernameHelp.textContent = "\u00A0"; // bo‘sh joy
+            usernameHelp.classList.remove("text-danger", "text-success");
+        }
+    });
+
+    // Password tekshirish
+    password.addEventListener("input", () => {
+        if (password.value.length < 6) {
+            passwordHelp.textContent = "kamida 6 ta belgi bo‘lishi kerak";
+            passwordHelp.classList.remove("text-success");
+            passwordHelp.classList.add("text-danger");
+        } else {
+            passwordHelp.textContent = "\u00A0"; // bo‘sh joy
+            passwordHelp.classList.remove("text-danger", "text-success");
+        }
+    });
+
+    // Show / Hide password tugmasi
+    togglePassword.addEventListener("click", () => {
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        togglePassword.textContent = type === "password" ? "show" : "hide";
+    });
+</script>
+
+</body>
+</html>
