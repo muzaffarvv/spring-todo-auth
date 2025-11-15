@@ -21,28 +21,28 @@ A Spring Boot Todo application with user authentication, role management, and pr
 
 src/main/java/uz/pdp/todo
 ├── controller
-│ ├── AuthUserController.java
-│ └── TodoController.java
+│ ├── AuthUserController.java # User authentication & profile
+│ └── TodoController.java # Todo CRUD and UI mapping
 ├── service
-│ ├── AuthUserService.java
-│ ├── TodoService.java
-│ └── TodoApplication.java
+│ ├── AuthUserService.java # User service (CRUD, login, role)
+│ ├── TodoService.java # Todo service (CRUD)
+│ └── TodoApplication.java # Spring Boot application entry point
 ├── dao
-│ ├── AuthUserDao.java
-│ └── TodoDao.java
+│ ├── AuthUserDao.java # DB interaction for users
+│ └── TodoDao.java # DB interaction for todos
 ├── model
-│ ├── AuthUser.java
-│ └── Todo.java
+│ ├── AuthUser.java # User entity/model
+│ └── Todo.java # Todo entity/model
 ├── dto
-│ └── UserRegisterDTO.java
+│ └── UserRegisterDTO.java # User registration DTO
 ├── enums
-│ ├── Role.java
-│ ├── Priority.java
-│ └── StringToPriorityConverter.java
+│ ├── Role.java # User roles
+│ ├── Priority.java # Todo priorities
+│ └── StringToPriorityConverter.java # Converter for request params
 ├── security
-│ ├── SecurityConfigurer.java
-│ ├── CustomUserDetailsService.java
-│ └── CustomAuthenticatedFailureHandler.java
+│ ├── SecurityConfigurer.java # Spring Security config
+│ ├── CustomUserDetailsService.java # UserDetailsService implementation
+│ └── CustomAuthenticatedFailureHandler.java # Login failure handler
 
 Copy code
 src/main/resources/templates
@@ -57,20 +57,6 @@ src/main/resources/templates
 
 yaml
 Copy code
-
----
-
-## 📊 Screenshots / UI Preview
-
-> You can replace the placeholders with actual screenshots later.
-
-| Login Page | Register Page | Todo List |
-|------------|---------------|-----------|
-| ![login](screenshots/login.png) | ![register](screenshots/register.png) | ![todos](screenshots/todos.png) |
-
-| Todo Form | Profile Page | Admin Panel |
-|-----------|--------------|-------------|
-| ![todo_form](screenshots/todo_form.png) | ![profile](screenshots/profile.png) | ![admin](screenshots/admin.png) |
 
 ---
 
