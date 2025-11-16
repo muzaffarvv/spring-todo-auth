@@ -103,4 +103,8 @@ cd spring-todo-auth
 
 ---
 
-vv
+<div align="center">
+
+**vv**
+
+</div>
