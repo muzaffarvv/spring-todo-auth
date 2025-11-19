@@ -1,6 +1,4 @@
-<div align="center">
 # 🌟 Spring Todo Auth
-</div>
 
 **Spring Boot Todo ilovasi** — foydalanuvchi autentifikatsiyasi, rollar va priority-based task boshqaruvi bilan.  
 <div align="center">
