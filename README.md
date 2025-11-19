@@ -1,110 +1,39 @@
+# 🌟 Spring Todo Auth
 
----
-# spring-todo-auth
+**Spring Boot Todo ilovasi** — foydalanuvchi autentifikatsiyasi, rollar va priority-based task boshqaruvi bilan.  
 
-A Spring Boot Todo application with user authentication, role management, and priority-based task management.
-
----
-
-## 🌟 Features
-
-- User registration and login with **role-based access** (`USER` and `ADMIN`)
-- CRUD operations for todos, **each todo associated with a user**
-- Priority-based task management (`LOW`, `MEDIUM`, `HIGH`)
-- Admin panel for managing users:
-  - Change user roles
-  - Toggle user block status
-- Spring Security configuration with login, logout, remember-me
-- Validation for user registration to prevent duplicate usernames
-- Uses Lombok for boilerplate code reduction
+[![Java](https://img.shields.io/badge/Java-17+-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.5-green?style=flat-square&logo=spring)](https://spring.io/projects/spring-boot)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
 
 ---
 
-## 🗂 Folder & Class Structure
+## 📖 Qisqacha
+
+Spring Todo Auth foydalanuvchilarga ro‘yxatdan o‘tish, login qilish va todos yaratish, tahrirlash, o‘chirish imkonini beradi.  
+Adminlar foydalanuvchilarni boshqaradi, rollarni o‘zgartiradi va bloklash/aktivlashtirish qiladi.
+
+---
+
+## ✨ Imkoniyatlar
+
+- 👤 Foydalanuvchi boshqaruvi — Ro‘yxatdan o‘tish, login, profil ko‘rish  (USER, ADMIN)
+- 📝 Todo boshqaruvi — CRUD operatsiyalar, foydalanuvchiga tegishli todos  
+- ⚡ Priority — LOW, MEDIUM, HIGH  
+- 🛠 Admin panel — Rollarni o‘zgartirish, foydalanuvchini bloklash/aktivlashtirish, Admin/User qilib tayinlash
+- 🔒 Security — Login, logout, remember-me  
+- ✅ Validatsiya — username va password shartlari (uzunlik, kuchli parol), shuningdek takroriy username’lar oldini olish.
+
+---
+
+## 🗂 Tuzilishi
 
 ```plaintext
-src/main/java/uz/pdp/todo
-├── controller
-│   ├── AuthUserController.java      # User authentication & profile
-│   └── TodoController.java          # Todo CRUD and UI mapping
-├── service
-│   ├── AuthUserService.java         # User service (CRUD, login, role)
-│   ├── TodoService.java             # Todo service (CRUD)
-│   └── TodoApplication.java         # Spring Boot application entry point
-├── dao
-│   ├── AuthUserDao.java             # DB interaction for users
-│   └── TodoDao.java                 # DB interaction for todos
-├── model
-│   ├── AuthUser.java                # User entity/model
-│   └── Todo.java                    # Todo entity/model
-├── dto
-│   └── UserRegisterDTO.java         # User registration DTO
-├── enums
-│   ├── Role.java                    # User roles
-│   ├── Priority.java                # Todo priorities
-│   └── StringToPriorityConverter.java # Converter for request params
-└── security
-    ├── SecurityConfigurer.java           # Spring Security config
-    ├── CustomUserDetailsService.java     # UserDetailsService implementation
-    └── CustomAuthenticatedFailureHandler.java # Login failure handler
-````
-
-```plaintext
-src/main/resources/templates
-├── login.html
-├── register.html
-├── todos.html
-├── todo_form.html
-├── profile.html
-├── admin.html
-├── fragments.html
-└── logout.html
-```
-
----
-
-## ⚙️ Technologies Used
-
-* Java 17+
-* Spring Boot
-* Spring Security
-* JDBC Template
-* Thymeleaf
-* Lombok
-* PostgreSQL (or any relational DB)
-
----
-
-## 🚀 How to Run
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/spring-todo-auth.git
-cd spring-todo-auth
-```
-
-2. Configure your database in `application.properties`.
-
-3. Build and run:
-
-```bash
-./mvnw spring-boot:run
-```
-
-4. Open in browser: [http://localhost:8080/auth/login](http://localhost:8080/auth/login)
-
----
-
-## 👤 User Accounts
-
-* Register a new user via `/auth/register`
-* Admin panel: `/auth/admin` (manage users, roles, block/unblock)
-
----
-
-<div align="center">
-
-**vv**
-
-</div>
+controller: AuthUserController, TodoController
+service: AuthUserService, TodoService
+dao: AuthUserDao, TodoDao
+model: AuthUser, Todo
+dto: UserRegisterDTO
+enums: Role, Priority, StringToPriorityConverter
+security: SecurityConfigurer, CustomUserDetailsService, CustomAuthenticatedFailureHandler
+templates: login.html, register.html, todos.html, todo_form.html, profile.html, admin.html
