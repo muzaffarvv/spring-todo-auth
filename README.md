@@ -40,3 +40,9 @@ dto: UserRegisterDTO
 enums: Role, Priority, StringToPriorityConverter
 security: SecurityConfigurer, CustomUserDetailsService, CustomAuthenticatedFailureHandler
 templates: login.html, register.html, todos.html, todo_form.html, profile.html, admin.html
+```
+<div align="center">
+
+**vv**
+
+</div>
