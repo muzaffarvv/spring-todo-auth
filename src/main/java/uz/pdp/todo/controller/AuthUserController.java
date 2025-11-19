@@ -48,7 +48,6 @@ public class AuthUserController {
         return "redirect:/auth/login";
     }
 
-
     @GetMapping("/profile")
     public String profilePage(Model model, Principal principal) {
         authUserService.getByUsername(principal.getName())

@@ -47,7 +47,6 @@ public class TodoController {
     public String editForm(@PathVariable Integer id, Model model) {
         Todo todo = todoService.findById(id);
 
-        // faqat o‘zining todosini ochish
         if (todo == null || !todoService.isOwner(todo)) {
             return REDIRECT_TODO;
         }
