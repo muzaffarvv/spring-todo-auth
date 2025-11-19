@@ -1,10 +1,13 @@
 # 🌟 Spring Todo Auth
 
 **Spring Boot Todo ilovasi** — foydalanuvchi autentifikatsiyasi, rollar va priority-based task boshqaruvi bilan.  
+<div align="center">
 
 [![Java](https://img.shields.io/badge/Java-17+-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.5-green?style=flat-square&logo=spring)](https://spring.io/projects/spring-boot)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
+
+</div>
 
 ---
 
